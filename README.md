@@ -133,7 +133,7 @@ That's it! You have now successfully integrated the `CinnoxVisitorCoreSDK` frame
 Create a class that inherits from UNNotificationServiceExtension to handle notification requests. This class will be responsible for passing the notification to your SDK and processing the corresponding content.
 
 Here's an example code snippet:
-
+```
 import UserNotifications
 import CinnoxVisitorCoreSDK
 
@@ -154,7 +154,7 @@ class NotificationService: UNNotificationServiceExtension {
         })
     }
 }
-
+```
 Please note the closure contentHandler used to handle the content of notifications sent by the Cinnox Visitor Core SDK. When the notification is sent by the SDK and the processing is successful, the processed content should be passed to the `contentHandler`.And The closure nonCinnoxContent to handle notifications that are not sent by the SDK or in case of processing failure.
 
 
