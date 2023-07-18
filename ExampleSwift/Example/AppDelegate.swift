@@ -7,15 +7,20 @@
 
 import UIKit
 import CinnoxVisitorCoreSDK
+import M800CoreSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var core: CinnoxVisitorCore?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        CinnoxVisitorCore.configure()
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _,_  in }
-        let core = CinnoxVisitorCore.initialize(serviceName: "YOUR_SERVICE_NAME.cinnox.com", delegate: self)
-        core.configure()
+        core = CinnoxVisitorCore.initialize(serviceName: "YOUR_SERVICE_NAME.cinnox.com", delegate: self)
+        
         return true
     }
 

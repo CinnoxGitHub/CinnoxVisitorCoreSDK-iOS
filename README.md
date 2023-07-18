@@ -18,7 +18,7 @@ source 'https://github.com/CocoaPods/Specs'
 target 'YOUR_APP_TARGET' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'CinnoxVisitorCoreSDK', '1.0.0.2'
+  pod 'CinnoxVisitorCoreSDK', '1.0.0.3'
 
   target 'YOUR_APP_NOTIFICATIONSERVICE_TARGET' do
     inherit! :search_paths
@@ -78,11 +78,15 @@ In your `AppDelegate.swift` file, add the following code snippet to the `applica
 ```swift
 import CinnoxVisitorCoreSDK
 
+var core: CinnoxVisitorCore?
+
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    CinnoxVisitorCore.configure()
     UNUserNotificationCenter.current().delegate = self
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _,_  in }
-    let core = CinnoxVisitorCore.initialize(serviceName: "YOUR_SERVICE_NAME.cinnox.com", delegate: self)
-    core.configure()
+    core = CinnoxVisitorCore.initialize(serviceName: "YOUR_SERVICE_NAME.cinnox.com", delegate: self)
+
     return true
 }
 ```
@@ -139,20 +143,16 @@ import UserNotifications
 import CinnoxVisitorCoreSDK
 
 class NotificationService: UNNotificationServiceExtension {
-    public var notificationHandler: NotificationServiceHandler?
-    
-    override init() {
-        super.init()
-        notificationHandler = CinnoxVisitorCoreNotificationServiceHandler()
-    }
+    public var notificationHandler = CinnoxVisitorCore.createNotificationServiceHandler()
     
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
-        notificationHandler?.handleNotificationRequest(request, withCinnoxContentHandler: contentHandler, nonCinnoxContent: {
+        notificationHandler.didReceive(request) { content in
+            contentHandler(content)
+        } nonCinnoxContent: {
             if let bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent) {
-                bestAttemptContent.title = "not cinnox noti"
                 contentHandler(bestAttemptContent)
             }
-        })
+        }
     }
 }
 ```

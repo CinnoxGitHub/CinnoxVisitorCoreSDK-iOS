@@ -9,19 +9,16 @@ import UserNotifications
 import CinnoxVisitorCoreSDK
 
 class NotificationService: UNNotificationServiceExtension {
-    public var notificationHandler: NotificationServiceHandler
-
-    override init() {
-        self.notificationHandler = CinnoxVisitorCoreNotificationServiceHandler()
-        super.init()
-    }
+    public var notificationHandler = CinnoxVisitorCore.createNotificationServiceHandler()
 
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
-        notificationHandler.handleNotificationRequest(request, withCinnoxContentHandler: contentHandler, nonCinnoxContent: {
+        notificationHandler.didReceive(request) { content in
+            contentHandler(content)
+        } nonCinnoxContent: {
             if let bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent) {
                 contentHandler(bestAttemptContent)
             }
-        })
+        }
     }
 }
 
