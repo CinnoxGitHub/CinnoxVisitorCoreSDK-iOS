@@ -46,6 +46,7 @@ To add a sample app to a Cinnox project, follow these steps:
 1. Use the `bundleID` from your Xcode project.
 2. Download the generated `M800ServiceInfo.plist` file from Cinnox.
 3. Replace the existing `plist` file in the root directory of the sample app with the downloaded `M800ServiceInfo.plist` file.
+> Note: Make sure you select both 'Your_App_Target' and 'YOUR_APP_NOTIFICATIONSERVICE_TARGET' in the 'Target Membership' section for `M800ServiceInfo.plist`.
 
 ## Xcode Signing & Capabilities
 
