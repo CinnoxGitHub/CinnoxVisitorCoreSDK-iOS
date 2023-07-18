@@ -11,7 +11,7 @@ To quickly integrate the `CinnoxVisitorCoreSDK` framework into your iOS applicat
 
 1. Open your Xcode project and navigate to the project directory.
 2. Open the `Podfile` file and add the following line:
-```
+```ruby
 platform :ios, '14.0'
 source 'https://github.com/CocoaPods/Specs'
 
@@ -90,7 +90,7 @@ This code initializes the `CinnoxVisitorCore` with a service name and a delegate
 
 And **MUST** set `UNUserNotificationCenter.current().delegate = self` here and handle the UNUserNotificationCenterDelegate, CinnoxVisitorCoreSDK will handle notifications.
 
-```
+```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.banner, .sound, .badge])
     }
@@ -133,7 +133,7 @@ That's it! You have now successfully integrated the `CinnoxVisitorCoreSDK` frame
 Create a class that inherits from UNNotificationServiceExtension to handle notification requests. This class will be responsible for passing the notification to your SDK and processing the corresponding content.
 
 Here's an example code snippet:
-```
+```swift
 import UserNotifications
 import CinnoxVisitorCoreSDK
 
