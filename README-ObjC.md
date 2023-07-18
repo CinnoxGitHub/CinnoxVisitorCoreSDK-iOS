@@ -13,6 +13,7 @@ To quickly integrate the `CinnoxVisitorCoreSDK` framework into your iOS applicat
 2. Open the `Podfile` file and add the following line:
 ```ruby
 platform :ios, '14.0'
+ENV['SWIFT_VERSION'] = '5.7'
 source 'https://github.com/CocoaPods/Specs'
 
 target 'YOUR_APP_TARGET' do
@@ -73,38 +74,45 @@ To use the `CinnoxVisitorCoreSDK` framework in your iOS application, follow thes
 
 ### Step 1: Add Initialization Code
 
-In your `AppDelegate.swift` file, add the following code snippet to the `application(_:didFinishLaunchingWithOptions:)` method:
+In your `AppDelegate.m` file, add the following code snippet to the `application(_:didFinishLaunchingWithOptions:)` method:
 
-```swift
-import CinnoxVisitorCoreSDK
+```objective-c
+@import CinnoxVisitorCoreSDK;
 
-var core: CinnoxVisitorCore?
+@property (strong, nonatomic) CinnoxVisitorCore *core;
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
 
-    CinnoxVisitorCore.configure()
-    UNUserNotificationCenter.current().delegate = self
-    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _,_  in }
-    core = CinnoxVisitorCore.initialize(serviceName: "YOUR_SERVICE_NAME.cinnox.com", delegate: self)
-
-    return true
+    [CinnoxVisitorCore configure];
+    
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions: (UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        
+    }];
+    
+    self.core = [CinnoxVisitorCore initializeWithServiceName: @"YOUR_SERVICE_NAME.cinnox.com" delegate: self];
+    
+    return YES;
 }
+
 ```
 
 This code initializes the `CinnoxVisitorCore` with a service name and a delegate object. Adjust the `serviceName` parameter according to your specific Cinnox service configuration.
 
-And **MUST** set `UNUserNotificationCenter.current().delegate = self` here and handle the UNUserNotificationCenterDelegate, CinnoxVisitorCoreSDK will handle notifications.
+And **MUST** set `[UNUserNotificationCenter currentNotificationCenter].delegate = self` here and handle the UNUserNotificationCenterDelegate, CinnoxVisitorCoreSDK will handle notifications.
 
-```swift
-func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-    completionHandler([.banner, .sound, .badge])
+```objective-c
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    completionHandler(UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge);
 }
 
-func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-    completionHandler()
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    completionHandler();
 }
 
-func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification {
+    
 }
 ```
 
@@ -112,19 +120,28 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor 
 In your desired view controller, add the following code snippet:
 
 
-```swift
-import UIKit
-import CinnoxVisitorCoreSDK
+```objective-c
+#import "ViewController.h"
+@import CinnoxVisitorCoreSDK;
 
-class ViewController: UIViewController {
-    var widget = CinnoxVisitorWidget(frame: .init(x: 100, y: 100, width: 50, height: 50))
+@interface ViewController ()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Add any additional setup after loading the view.
-        view.addSubview(widget)
-    }
+@property (strong, nonatomic) CinnoxVisitorWidget * widget;
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.widget = [[CinnoxVisitorWidget alloc] initWithFrame:CGRectMake(100, 100, 50, 50)];
+    [self.view addSubview: self.widget];
 }
+
+
+@end
+
 ```
 
 This code creates an instance of `CinnoxVisitorWidget` and adds it as a subview to your view controller's view. Adjust the `frame` parameter according to your desired widget position and size.
@@ -138,23 +155,30 @@ That's it! You have now successfully integrated the `CinnoxVisitorCoreSDK` frame
 Create a class that inherits from UNNotificationServiceExtension to handle notification requests. This class will be responsible for passing the notification to your SDK and processing the corresponding content.
 
 Here's an example code snippet:
-```swift
-import UserNotifications
-import CinnoxVisitorCoreSDK
+```objective-c
+#import "NotificationService.h"
+@import CinnoxVisitorCoreSDK;
 
-class NotificationService: UNNotificationServiceExtension {
-    public var notificationHandler = CinnoxVisitorCore.createNotificationServiceHandler()
+@interface NotificationService ()
+
+@property (nonatomic, strong) id<CinnoxNotificationServiceHandler> handler;
+
+@end
+
+@implementation NotificationService
+
+- (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
+    self.handler = [CinnoxVisitorCore createNotificationServiceHandler];
     
-    override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
-        notificationHandler.didReceive(request) { content in
-            contentHandler(content)
-        } nonCinnoxContent: {
-            if let bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent) {
-                contentHandler(bestAttemptContent)
-            }
-        }
-    }
+    [self.handler didReceive: request withCinnoxContentHandler:^(UNNotificationContent * _Nonnull content) {
+        contentHandler(content);
+    } nonCinnoxContent:^{
+        UNMutableNotificationContent *bestAttemptContent = [request.content mutableCopy];
+        contentHandler(bestAttemptContent);
+    }];
 }
+
+@end
 ```
 Please note the closure contentHandler used to handle the content of notifications sent by the Cinnox Visitor Core SDK. When the notification is sent by the SDK and the processing is successful, the processed content should be passed to the `contentHandler`.And The closure nonCinnoxContent to handle notifications that are not sent by the SDK or in case of processing failure.
 
