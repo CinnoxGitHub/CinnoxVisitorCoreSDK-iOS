@@ -135,7 +135,7 @@ That's it! You have now successfully integrated the `CinnoxVisitorCoreSDK` frame
 
 #### 1. Create a Notification Service Extension:
 
-Create a class that inherits from UNNotificationServiceExtension to handle notification requests. This class will be responsible for passing the notification to your SDK and processing the corresponding content.
+Create a class that inherits from UNNotificationServiceExtension to handle notification requests. This class will be responsible for passing the notification to your SDK and processing the corresponding content. (https://developer.apple.com/documentation/usernotifications/unnotificationserviceextension)
 
 Here's an example code snippet:
 ```swift
@@ -186,12 +186,14 @@ If you already have an APNS Key, the Key ID will be listed there
 The APNS Key should be downloaded as a .p8 file. If you haven't created an APNS Key yet, you can do so by:
 
 Signing in to your Apple Developer account
-Going to Certificates, Identifiers & Profiles > Keys
+Going to Certificates, Identifiers & Profiles > Keys (https://developer.apple.com/account/resources/authkeys/list)
 Clicking the "+" button to create a new key
 Entering a key name and checking the "Apple Push Notifications service (APNs)" option
 Clicking "Continue" and then "Register"
 On the confirmation page, click "Download" to save the .p8 file
-Please provide us with these details so that we can proceed with the setup. If you have any questions or need assistance, feel free to get in touch.
+Please provide us (support@cinnox.com) with these details so that we can proceed with the setup. If you have any questions or need assistance, feel free to get in touch.
 
 We appreciate your prompt attention to this matter and look forward to delivering the best possible service.
 
+## Contact Us
+If you encounter any technical issues, please contact us (support@cinnox.com)
