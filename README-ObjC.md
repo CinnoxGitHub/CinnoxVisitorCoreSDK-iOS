@@ -13,13 +13,13 @@ To quickly integrate the `CinnoxVisitorCoreSDK` framework into your iOS applicat
 2. Open the `Podfile` file and add the following line:
 ```ruby
 platform :ios, '14.0'
-ENV['SWIFT_VERSION'] = '5.7'
+ENV['SWIFT_VERSION'] = '5.0'
 source 'https://github.com/CocoaPods/Specs'
 
 target 'YOUR_APP_TARGET' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'CinnoxVisitorCoreSDK', '1.0.0.4'
+  pod 'CinnoxVisitorCoreSDK', '1.0.0.11'
 
   target 'YOUR_APP_NOTIFICATIONSERVICE_TARGET' do
     inherit! :search_paths
@@ -29,7 +29,6 @@ end
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
-            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
             config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
         end
     end
@@ -218,6 +217,33 @@ On the confirmation page, click "Download" to save the .p8 file
 Please provide us (support@cinnox.com) with these details so that we can proceed with the setup. If you have any questions or need assistance, feel free to get in touch.
 
 We appreciate your prompt attention to this matter and look forward to delivering the best possible service. 
+
+### How to use CTA on your application
+
+You can use its click-to-action (CTA) features (i.e., Click-to-call or Click-to-chat buttons) on your application.
+
+Widget - a widget, i.e., a small application interface, located at the bottom of a UI page that lets your customers or visitors immediately interact with your business through call or chat.
+
+Click-to-call - a CINNOX widget feature that automatically calls a specific Tag or Staff member whenever a customer.
+
+Click-to-chat - a CINNOX widget that automatically launches a chat room for a specific Tag or Staff member whenever a customer.
+
+Here is a step-by-step guide for using CTA function:
+
+```objective-c
+// MARK: create call tag action
+CinnoxAction *tagAction = [CinnoxAction initTagActionWithTagId:@"YOUR_TAG_ID" contactMethod: CinnoxVisitorContactMethodMessage];
+    
+// MARK: create call staff action
+CinnoxAction *staffAction = [CinnoxAction initStaffActionWithStaffEid:@"YOUR_STAFF_EID" contactMethod: CinnoxVisitorContactMethodMessage];
+    
+// MARK: create open directory action
+CinnoxAction *directoryAction = [CinnoxAction initDirectoryAction];
+    
+[[CinnoxVisitorCore current] callToActionWithAction:tagAction completion:^(NSError *error) {
+    NSLog(@"%@", error);
+}];
+```
 
 ## Contact Us
 If you encounter any technical issues, please contact us (support@cinnox.com)
