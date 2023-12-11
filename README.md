@@ -5,6 +5,8 @@
 
 This guide provides instructions for setting up and using the `CinnoxVisitorCoreSDK` framework in your iOS application.
 
+<img src="https://github.com/CinnoxGitHub/ios_visitor_sample_app/blob/44aa6473f11a994bc94bab623a09bc275ebcabe5/Demo.gif" width="200">
+
 ## iOS Quick Start Guide
 
 To quickly integrate the `CinnoxVisitorCoreSDK` framework into your iOS application, follow these steps:
