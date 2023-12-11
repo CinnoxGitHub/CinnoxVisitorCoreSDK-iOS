@@ -1,5 +1,5 @@
 [![Swift](https://img.shields.io/badge/Swift-5.7_5.8-orange?style=flat-square)](https://img.shields.io/badge/Swift-5.7_5.8-Orange?style=flat-square)
-[![iOS](https://img.shields.io/badge/iOS-14+-blue?style=flat-square)](https://img.shields.io/badge/iOS-14-blue?style=flat-square)
+[![iOS](https://img.shields.io/badge/iOS-13+-blue?style=flat-square)](https://img.shields.io/badge/iOS-13-blue?style=flat-square)
 [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-black?style=flat-square)](https://img.shields.io/badge/iOS-14-blue?style=flat-square)
 # `CinnoxVisitorCoreSDK`
 
@@ -14,7 +14,7 @@ To quickly integrate the `CinnoxVisitorCoreSDK` framework into your iOS applicat
 1. Open your Xcode project and navigate to the project directory.
 2. Open the `Podfile` file and add the following line:
 ```ruby
-platform :ios, '14.0'
+platform :ios, '13.0'
 source 'https://github.com/CocoaPods/Specs'
 
 target 'YOUR_APP_TARGET' do
