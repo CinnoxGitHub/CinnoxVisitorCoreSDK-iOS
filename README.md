@@ -35,6 +35,7 @@ post_install do |installer|
     end
 end
 
+
 ```
 3. Save the `Podfile` and run the command `pod install` in the project directory to install the framework.
 > Note: Make sure you have CocoaPods installed on your system before running the `pod install` command.
