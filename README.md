@@ -87,13 +87,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     CinnoxVisitorCore.configure()
     UNUserNotificationCenter.current().delegate = self
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _,_  in }
-    core = CinnoxVisitorCore.initialize(serviceName: "YOUR_SERVICE_NAME.cinnox.com", delegate: self)
+    core = CinnoxVisitorCore.initialize(serviceName: "YOUR_SERVICE_NAME.cinnox.com", key: "YOUR_KEY", delegate: self) // Please contact cinnox to get the key
 
     return true
 }
 ```
 
-This code initializes the `CinnoxVisitorCore` with a service name and a delegate object. Adjust the `serviceName` parameter according to your specific Cinnox service configuration.
+This code initializes the `CinnoxVisitorCore` with a service name, a key and a delegate object. Adjust the `serviceName` parameter according to your specific Cinnox service configuration, and Contact us to get "YOUR_KEY" for the `key` parameter.
 
 And **MUST** set `UNUserNotificationCenter.current().delegate = self` here and handle the UNUserNotificationCenterDelegate, CinnoxVisitorCoreSDK will handle notifications.
 
