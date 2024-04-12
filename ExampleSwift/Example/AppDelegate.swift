@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CinnoxVisitorCore.configure()
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _,_  in }
-        core = CinnoxVisitorCore.initialize(serviceName: "YOUR_SERVICE_NAME.cinnox.com", delegate: self)
+        core = CinnoxVisitorCore.initialize(serviceName: "YOUR_SERVICE_NAME.cinnox.com", key: "YOUR_KEY", delegate: self)
         
         return true
     }

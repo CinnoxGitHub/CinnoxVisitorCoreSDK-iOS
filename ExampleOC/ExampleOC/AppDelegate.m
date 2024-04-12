@@ -29,7 +29,7 @@
         
     }];
     
-    self.core = [CinnoxVisitorCore initializeWithServiceName: @"YOUR_SERVICE_NAME.cinnox.com" delegate: self];
+    self.core = [CinnoxVisitorCore initializeWithServiceName: @"YOUR_SERVICE_NAME.cinnox.com" key: @"YOUR_KEY" delegate: self];
     
     return YES;
 }
