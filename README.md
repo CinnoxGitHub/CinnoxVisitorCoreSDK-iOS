@@ -39,6 +39,7 @@ end
 ```
 3. Save the `Podfile` and run the command `pod install` in the project directory to install the framework.
 > Note: Make sure you have CocoaPods installed on your system before running the `pod install` command.
+> Before running `pod install`, you may need to execute the command `git lfs install`.
 4. Once the installation is complete, open the generated `.xcworkspace` file to access your project in Xcode.
 
 ## Adding a Sample App to a Cinnox Project
