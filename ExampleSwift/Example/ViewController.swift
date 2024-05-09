@@ -14,8 +14,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = .white
         view.addSubview(widget)
+        
+        // addCtaButton()
+    }
+    
+    func addCtaButton() {
         let ctaButton = UIButton()
         ctaButton.setTitle("CTA", for: .normal)
         ctaButton.addTarget(self, action: #selector(ctaButtonTap), for: .touchUpInside)

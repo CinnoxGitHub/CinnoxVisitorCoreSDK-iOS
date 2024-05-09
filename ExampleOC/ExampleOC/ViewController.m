@@ -18,10 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     self.widget = [[CinnoxVisitorWidget alloc] initWithFrame:CGRectMake(100, 100, 50, 50)];
     [self.view addSubview: self.widget];
     
+//    [self addCtaButton];
+}
+
+- (void)addCtaButton {
     UIButton *ctaButton = [[UIButton alloc] init];
     [ctaButton setTitle:@"CTA" forState:UIControlStateNormal];
     [ctaButton addTarget:self action:@selector(ctaButtonTap) forControlEvents:UIControlEventTouchUpInside];
