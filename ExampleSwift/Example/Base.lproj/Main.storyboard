@@ -17,18 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2k-SZ-bfk">
-                                <rect key="frame" x="148.66666666666666" y="410" width="95.666666666666657" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VisitorSampleApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2k-SZ-bfk">
+                                <rect key="frame" x="20" y="79" width="161.66666666666666" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="N2k-SZ-bfk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2xi-Vd-nCx"/>
-                            <constraint firstItem="N2k-SZ-bfk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="J5v-Ws-WLb"/>
+                            <constraint firstItem="N2k-SZ-bfk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="XJA-oR-HET"/>
+                            <constraint firstItem="N2k-SZ-bfk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yIq-QP-e63"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -17,18 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSb-48-x18">
-                                <rect key="frame" x="148.66666666666666" y="410" width="96" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VisitorSampleApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSb-48-x18">
+                                <rect key="frame" x="20" y="79" width="161.66666666666666" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iSb-48-x18" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g2d-9c-tZ1"/>
-                            <constraint firstItem="iSb-48-x18" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q5e-ey-zjA"/>
+                            <constraint firstItem="iSb-48-x18" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wop-Bf-T3h"/>
+                            <constraint firstItem="iSb-48-x18" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="j5D-tU-0Kw"/>
                         </constraints>
                     </view>
                 </viewController>

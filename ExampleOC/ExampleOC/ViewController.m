@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor systemBackgroundColor];
     self.widget = [[CinnoxVisitorWidget alloc] initWithFrame:CGRectMake(100, 100, 50, 50)];
     [self.view addSubview: self.widget];
     
