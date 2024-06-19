@@ -10,5 +10,7 @@
 	<string>YOUR_TEAM_ID</string>
 	<key>M800VisitorNotification</key>
 	<true/>
+	<key>M800EnableCallKit</key>
+	<true/>
 </dict>
 </plist>

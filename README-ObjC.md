@@ -21,7 +21,7 @@ source 'https://github.com/CocoaPods/Specs'
 target 'YOUR_APP_TARGET' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'CinnoxVisitorCoreSDK', '1.0.1.20'
+  pod 'CinnoxVisitorCoreSDK', '1.0.1.21'
 
   target 'YOUR_APP_NOTIFICATIONSERVICE_TARGET' do
     inherit! :search_paths

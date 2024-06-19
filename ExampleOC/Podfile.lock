@@ -1,9 +1,9 @@
 PODS:
   - Cache (5.2.0)
-  - CinnoxVisitorCoreSDK (1.0.1.20):
-    - LiveConnectUIKit_iOS (= 4.3.0.225)
+  - CinnoxVisitorCoreSDK (1.0.1.21):
+    - LiveConnectUIKit_iOS (= 4.3.0.226)
     - M800CallSDK (= 4.3.0.84)
-    - M800CoreSDK (= 4.3.0.101)
+    - M800CoreSDK (= 4.3.0.103)
     - M800MessageSDK (= 4.3.0.78)
   - CocoaMQTT (2.1.6):
     - CocoaMQTT/Core (= 2.1.6)
@@ -12,7 +12,7 @@ PODS:
   - FMDB/SQLCipher (2.7.5):
     - SQLCipher
   - Kingfisher (7.6.2)
-  - LiveConnectUIKit_iOS (4.3.0.225):
+  - LiveConnectUIKit_iOS (4.3.0.226):
     - Cache (= 5.2.0)
     - FMDB/SQLCipher (= 2.7.5)
     - Kingfisher (~> 7.6.2)
@@ -22,7 +22,7 @@ PODS:
   - M800CallSDK (4.3.0.84):
     - M800CoreSDK (~> 4.3.0.101)
     - M800WebRTC (~> 1.0.4.12)
-  - M800CoreSDK (4.3.0.101):
+  - M800CoreSDK (4.3.0.103):
     - CocoaMQTT (= 2.1.6)
     - Starscream (= 4.0.8)
   - M800MessageSDK (4.3.0.78):
@@ -42,7 +42,7 @@ PODS:
   - SwiftSoup (2.6.1)
 
 DEPENDENCIES:
-  - CinnoxVisitorCoreSDK (= 1.0.1.20)
+  - CinnoxVisitorCoreSDK (= 1.0.1.21)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs:
@@ -65,13 +65,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
-  CinnoxVisitorCoreSDK: 43211c8489b1b415db5aeb29a3aafb3491f22fe1
+  CinnoxVisitorCoreSDK: 5dd91899489f1d02ab56581d36a0e4c48202ee86
   CocoaMQTT: 1f206228b29318eabdacad0c2e4e88575922c27a
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
-  LiveConnectUIKit_iOS: a89f5d87e844db676fc31daa71ed2a83ddba54af
+  LiveConnectUIKit_iOS: 71e7d5922c69f971f988eeb11a25a449c996100e
   M800CallSDK: a44ce5b7cb9a6d5792e614c9d63ff0ad7386b84e
-  M800CoreSDK: 12f420eb379bdd6dbd4a66fbf57724a1e77aa0ea
+  M800CoreSDK: 465e81e6468b371d267f13921f55ff427ce0ef6a
   M800MessageSDK: 30487437c42554bef017fc10a1d14cc6428007c7
   M800WebRTC: dbfd4c93ca7cc8cc3cdf0eea2701cb5da1e809b3
   MqttCocoaAsyncSocket: 77d3b74f76228dd5a05d1f9526eab101d415b30c
@@ -81,6 +81,6 @@ SPEC CHECKSUMS:
   SwiftProtobuf: 69f02cd54fb03201c5e6bf8b76f687c5ef7541a3
   SwiftSoup: 5dd2c1b06afc964f30d99894af6ede22ede627aa
 
-PODFILE CHECKSUM: 8f053148e574c1b437c8fdf973642de80a9b7522
+PODFILE CHECKSUM: 34d09629b46341c4e4f486435a95c37018c8422c
 
 COCOAPODS: 1.15.2
