@@ -1,7 +1,7 @@
 PODS:
   - Cache (5.2.0)
-  - CinnoxVisitorCoreSDK (1.0.1.25):
-    - LiveConnectUIKit_iOS (= 4.5.0.9)
+  - CinnoxVisitorCoreSDK (1.0.1.26):
+    - LiveConnectUIKit_iOS (= 4.5.0.10)
     - M800CallSDK (= 4.5.0.4)
     - M800CoreSDK (= 4.5.0.4)
     - M800MessageSDK (= 4.5.0.3)
@@ -12,7 +12,7 @@ PODS:
   - FMDB/SQLCipher (2.7.5):
     - SQLCipher
   - Kingfisher (7.6.2)
-  - LiveConnectUIKit_iOS (4.5.0.9):
+  - LiveConnectUIKit_iOS (4.5.0.10):
     - Cache (= 5.2.0)
     - FMDB/SQLCipher (= 2.7.5)
     - Kingfisher (~> 7.6.2)
@@ -42,7 +42,7 @@ PODS:
   - SwiftSoup (2.6.1)
 
 DEPENDENCIES:
-  - CinnoxVisitorCoreSDK (= 1.0.1.25)
+  - CinnoxVisitorCoreSDK (= 1.0.1.26)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs:
@@ -65,11 +65,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
-  CinnoxVisitorCoreSDK: 0d3b8e26bbe8d8ac682df7e39001004523af528c
+  CinnoxVisitorCoreSDK: ec96f0fbed0a0f0fc3b1b2d2e7ae9b541114bc40
   CocoaMQTT: 1f206228b29318eabdacad0c2e4e88575922c27a
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
-  LiveConnectUIKit_iOS: d433bac4305c10c1ee61ff5c8f9a42a4dc3e075c
+  LiveConnectUIKit_iOS: 16e1640f07c44cb65b3474593b6e6e9cdb86f6f3
   M800CallSDK: f9361b3c5c7528086f79612e462ba1d6f5150173
   M800CoreSDK: 9db10fc7939cbeb2e30f7ff7d01cf8c37d2a1444
   M800MessageSDK: 8cd34145813d3425771ace8e4e677eff3edda261
@@ -81,6 +81,6 @@ SPEC CHECKSUMS:
   SwiftProtobuf: 69f02cd54fb03201c5e6bf8b76f687c5ef7541a3
   SwiftSoup: 5dd2c1b06afc964f30d99894af6ede22ede627aa
 
-PODFILE CHECKSUM: 2a5bd7507f6e845469be1c7d67e309e878baf57b
+PODFILE CHECKSUM: 4c52f08c2bac60837087ef9449384d957c97ffac
 
 COCOAPODS: 1.15.2
