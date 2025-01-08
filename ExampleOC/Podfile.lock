@@ -1,32 +1,34 @@
 PODS:
-  - Cache (5.2.0)
-  - CinnoxVisitorCoreSDK (1.0.1.26):
-    - LiveConnectUIKit_iOS (= 4.5.0.10)
-    - M800CallSDK (= 4.5.0.4)
-    - M800CoreSDK (= 4.5.0.4)
-    - M800MessageSDK (= 4.5.0.3)
+  - Cache (6.0.0)
+  - CinnoxVisitorCoreSDK (1.0.1.27):
+    - LiveConnectUIKit_iOS (= 4.5.0.13)
+    - M800CallSDK (= 4.5.0.5)
+    - M800CoreSDK (= 4.5.0.6)
+    - M800MessageSDK (= 4.5.0.4)
   - CocoaMQTT (2.1.6):
     - CocoaMQTT/Core (= 2.1.6)
   - CocoaMQTT/Core (2.1.6):
     - MqttCocoaAsyncSocket (~> 1.0.8)
-  - FMDB/SQLCipher (2.7.5):
-    - SQLCipher
+  - FMDB/Core (2.7.12)
+  - FMDB/SQLCipher (2.7.12):
+    - FMDB/Core
+    - SQLCipher (~> 4.6)
   - Kingfisher (7.6.2)
-  - LiveConnectUIKit_iOS (4.5.0.10):
-    - Cache (= 5.2.0)
-    - FMDB/SQLCipher (= 2.7.5)
+  - LiveConnectUIKit_iOS (4.5.0.13):
+    - Cache (= 6.0.0)
+    - FMDB/SQLCipher (= 2.7.12)
     - Kingfisher (~> 7.6.2)
-    - M800CallSDK (~> 4.5.0.4)
-    - M800MessageSDK (~> 4.5.0.3)
+    - M800CallSDK (~> 4.5.0.5)
+    - M800MessageSDK (~> 4.5.0.4)
     - SSZipArchive (= 2.4.3)
-  - M800CallSDK (4.5.0.4):
-    - M800CoreSDK (~> 4.5.0.3)
+  - M800CallSDK (4.5.0.5):
+    - M800CoreSDK (~> 4.5.0.5)
     - M800WebRTC (~> 1.0.4.12)
-  - M800CoreSDK (4.5.0.4):
+  - M800CoreSDK (4.5.0.6):
     - CocoaMQTT (= 2.1.6)
     - Starscream (= 4.0.8)
-  - M800MessageSDK (4.5.0.3):
-    - M800CoreSDK (~> 4.5.0.3)
+  - M800MessageSDK (4.5.0.4):
+    - M800CoreSDK (~> 4.5.0.5)
     - SwiftProtobuf (= 1.25.1)
     - SwiftSoup (= 2.6.1)
   - M800WebRTC (1.0.4.12)
@@ -42,7 +44,7 @@ PODS:
   - SwiftSoup (2.6.1)
 
 DEPENDENCIES:
-  - CinnoxVisitorCoreSDK (= 1.0.1.26)
+  - CinnoxVisitorCoreSDK (= 1.0.1.27)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs:
@@ -64,15 +66,15 @@ SPEC REPOS:
     - SwiftSoup
 
 SPEC CHECKSUMS:
-  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
-  CinnoxVisitorCoreSDK: ec96f0fbed0a0f0fc3b1b2d2e7ae9b541114bc40
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
+  CinnoxVisitorCoreSDK: b5a62a8e5a971b353954a6cb2001678aba7052ef
   CocoaMQTT: 1f206228b29318eabdacad0c2e4e88575922c27a
-  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  FMDB: 728731dd336af3936ce00f91d9d8495f5718a0e6
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
-  LiveConnectUIKit_iOS: 16e1640f07c44cb65b3474593b6e6e9cdb86f6f3
-  M800CallSDK: f9361b3c5c7528086f79612e462ba1d6f5150173
-  M800CoreSDK: 9db10fc7939cbeb2e30f7ff7d01cf8c37d2a1444
-  M800MessageSDK: 8cd34145813d3425771ace8e4e677eff3edda261
+  LiveConnectUIKit_iOS: d52b65a53e24fc0a4f0bd27a7038f97710009c44
+  M800CallSDK: 808325a665763979afa93230dd44ea32bd1d81d6
+  M800CoreSDK: 7c41eb09eaf2029223c0c1a41512fc3944c81873
+  M800MessageSDK: 3b5204bab35d18ebd18f03b2a44fea84cff2dcb3
   M800WebRTC: dbfd4c93ca7cc8cc3cdf0eea2701cb5da1e809b3
   MqttCocoaAsyncSocket: 77d3b74f76228dd5a05d1f9526eab101d415b30c
   SQLCipher: 77fbe633cd84db04b07876dd50766b4924b57d61
@@ -81,6 +83,6 @@ SPEC CHECKSUMS:
   SwiftProtobuf: 69f02cd54fb03201c5e6bf8b76f687c5ef7541a3
   SwiftSoup: 5dd2c1b06afc964f30d99894af6ede22ede627aa
 
-PODFILE CHECKSUM: 4c447cbfb5e2b2f1871e1eb3350354bb72078363
+PODFILE CHECKSUM: 87cc2768b89f40a71ad3a280e8a7e2dc4d289173
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
